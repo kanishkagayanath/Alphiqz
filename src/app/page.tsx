@@ -44,8 +44,8 @@ export default function Home() {
                 Download high-quality vectors, icons, and graphics - completely free for personal and commercial use.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/designs" className="group bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
+              <div className="mb-8">
+                <Link href="/designs" className="group bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center inline-block">
                   <span className="flex items-center justify-center">
                     Explore Designs
                     <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,31 +53,6 @@ export default function Home() {
                     </svg>
                   </span>
                 </Link>
-                
-                <button className="border-2 border-purple-200 text-purple-600 px-8 py-4 rounded-xl font-semibold hover:border-purple-600 hover:bg-purple-50 transition-all duration-300 group">
-                  <span className="flex items-center justify-center">
-                    <svg className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                    Follow Us
-                  </span>
-                </button>
-              </div>
-              
-              {/* Stats */}
-              <div className="flex space-x-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">1000+</div>
-                  <div className="text-gray-500 text-sm">Assets</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">50K+</div>
-                  <div className="text-gray-500 text-sm">Downloads</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-600">100%</div>
-                  <div className="text-gray-500 text-sm">Free</div>
-                </div>
               </div>
             </div>
             
@@ -170,7 +145,7 @@ export default function Home() {
                 description: 'Brand identity elements'
               },
             ].map((category, index) => (
-              <div key={category.name} className="group cursor-pointer" style={{animationDelay: `${index * 0.1}s`}}>
+              <Link key={category.name} href={`/designs?category=${encodeURIComponent(category.name.toLowerCase().replace(/\s+/g, '-').replace('&', 'and'))}`} className="group cursor-pointer block" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className={`relative h-64 bg-gradient-to-br ${category.color} rounded-2xl p-6 text-white transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl overflow-hidden`}>
                   <div className="relative z-10">
                     <div className="text-4xl mb-4 group-hover:animate-bounce">{category.icon}</div>
@@ -192,7 +167,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -245,7 +220,7 @@ export default function Home() {
             Ready to Create Something Amazing?
           </h2>
           <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of creators who trust Alphiq for their design needs. Start downloading premium assets today!
+            Discover my handcrafted design assets and illustrations. Start downloading premium designs created with passion and creativity!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

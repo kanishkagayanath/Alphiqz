@@ -99,11 +99,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group">
+            <Link href="/designs" className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group inline-block">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-20 animate-pulse"></div>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
