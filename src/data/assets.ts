@@ -108,6 +108,42 @@ export const assets: Asset[] = [
     createdDate: "2025-01-05"
   },
 
+  // 🚗 YOUR CAR LOGO COLLECTION
+  {
+    id: 6,
+    title: "Car Logo Collection",
+    description: "Premium collection of car logos and automotive branding designs. Perfect for car dealerships, automotive companies, and vehicle-related businesses.",
+    category: "logos-and-branding",
+    type: "ZIP",
+    fileSize: "5.2 MB",
+    dimensions: "Vector",
+    tags: ["car", "logo", "automotive", "vehicle", "branding", "transport"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/CarLogo.png",
+    downloadUrl: "/assets/logos/CarLogo.zip",
+    createdDate: "2025-08-31"
+  },
+
+  // 🎨 YOUR BACKGROUND COLLECTION
+  {
+    id: 7,
+    title: "Background Collection v1",
+    description: "Beautiful collection of background illustrations perfect for web designs, presentations, and creative projects. High-quality designs with modern aesthetics.",
+    category: "illustrations",
+    type: "ZIP",
+    fileSize: "3.8 MB",
+    dimensions: "Vector",
+    tags: ["background", "illustration", "design", "web", "modern", "creative"],
+    featured: true,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Background.v1.png",
+    downloadUrl: "/assets/illustrations/Background.v1.zip",
+    createdDate: "2025-08-31"
+  },
+
   /* 
   ============================================
   📝 TEMPLATE - Copy this to add new assets:

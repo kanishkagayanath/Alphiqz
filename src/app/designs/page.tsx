@@ -124,30 +124,37 @@ export default function Designs() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredAssets.map((asset) => (
             <div key={asset.id} className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-              {asset.featured && (
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    ⭐ Featured
-                  </span>
-                </div>
-              )}
-              
               {/* Image/Preview */}
               <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
-                {/* For now, show a placeholder. You can replace this with actual preview images */}
-                <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
+                {/* Show actual preview image if available */}
+                <img 
+                  src={asset.previewImage} 
+                  alt={asset.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    // Fallback to category icon if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback icon (hidden by default, shown if image fails) */}
+                <div className="text-6xl group-hover:scale-110 transition-transform duration-300 absolute inset-0 flex items-center justify-center" style={{display: 'none'}}>
                   {asset.category === 'illustrations' && '🎨'}
                   {asset.category === 'icons-and-ui' && '🔷'}
                   {asset.category === 'patterns' && '🌟'}
                   {asset.category === 'logos-and-branding' && '✨'}
                 </div>
-                {/* Uncomment below when you add preview images */}
-                {/* <img 
-                  src={asset.previewImage} 
-                  alt={asset.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                /> */}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                
+                {/* Featured badge overlay */}
+                {asset.featured && (
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">
+                      ⭐ Featured
+                    </span>
+                  </div>
+                )}
               </div>
               
               {/* Content */}
@@ -185,12 +192,22 @@ export default function Designs() {
                 <div className="flex space-x-2">
                   <a 
                     href={asset.downloadUrl}
-                    download
+                    download={asset.title.replace(/\s+/g, '-').toLowerCase() + '.' + asset.type.toLowerCase()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center"
+                    onClick={(e) => {
+                      // Track download count here if needed
+                      console.log(`Downloading: ${asset.title}`);
+                    }}
                   >
                     Download Free
                   </a>
-                  <button className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors">
+                  <button 
+                    className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors"
+                    onClick={() => window.open(asset.previewImage, '_blank')}
+                    title="Preview"
+                  >
                     👁️
                   </button>
                 </div>
