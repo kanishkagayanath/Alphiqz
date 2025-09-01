@@ -5,7 +5,7 @@ export interface Asset {
   id: number;
   title: string;
   description: string;
-  category: 'illustrations' | 'icons-and-ui' | 'patterns' | 'logos-and-branding';
+  category: 'illustrations' | 'gaming-assets' | 'patterns' | 'logos-and-branding';
   type: string; // e.g., 'SVG', 'PNG', 'AI', 'PSD', 'JPG'
   fileSize: string; // e.g., '2.5 MB'
   dimensions?: string; // e.g., '1920x1080' or 'Vector'
@@ -20,55 +20,23 @@ export interface Asset {
 
 export const assets: Asset[] = [
   // 🎨 ILLUSTRATIONS
-  {
-    id: 1,
-    title: "Abstract Geometric Art",
-    description: "Modern abstract illustration with vibrant colors and geometric shapes perfect for web designs and presentations.",
-    category: "illustrations",
-    type: "SVG",
-    fileSize: "1.2 MB",
-    dimensions: "Vector",
-    tags: ["abstract", "geometric", "colorful", "modern", "web"],
-    featured: true,
-    premium: false,
-    downloadCount: "2.1k",
-    previewImage: "/assets/previews/abstract-geometric-preview.jpg",
-    downloadUrl: "/assets/illustrations/abstract-geometric.svg",
-    createdDate: "2025-01-15"
-  },
   
-  {
-    id: 2,
-    title: "Nature Landscape Pack",
-    description: "Beautiful hand-drawn nature illustrations including mountains, trees, and scenic landscapes.",
-    category: "illustrations",
-    type: "AI",
-    fileSize: "5.8 MB",
-    dimensions: "Vector",
-    tags: ["nature", "landscape", "mountains", "trees", "handdrawn"],
-    featured: false,
-    premium: false,
-    downloadCount: "890",
-    previewImage: "/assets/previews/nature-landscape-preview.jpg",
-    downloadUrl: "/assets/illustrations/nature-landscape-pack.ai",
-    createdDate: "2025-01-10"
-  },
 
-  // 🔷 ICONS & UI
+  // 🎮 GAMING ASSETS
   {
     id: 3,
-    title: "Modern UI Icon Set",
-    description: "Clean and modern icon set with 50+ icons perfect for web and mobile applications.",
-    category: "icons-and-ui",
+    title: "Game UI Elements Pack",
+    description: "Complete set of game UI elements including buttons, health bars, menus, and icons perfect for game development.",
+    category: "gaming-assets",
     type: "SVG",
     fileSize: "3.2 MB",
-    dimensions: "24x24, 48x48",
-    tags: ["ui", "icons", "modern", "clean", "web", "mobile"],
+    dimensions: "Various",
+    tags: ["gaming", "ui", "game", "buttons", "interface", "mobile"],
     featured: true,
     premium: false,
     downloadCount: "3.4k",
-    previewImage: "/assets/previews/modern-ui-icons-preview.jpg",
-    downloadUrl: "/assets/icons/modern-ui-icon-set.zip",
+    previewImage: "/assets/previews/game-ui-elements-preview.jpg",
+    downloadUrl: "/assets/gaming/game-ui-elements-pack.zip",
     createdDate: "2025-01-12"
   },
 
@@ -91,31 +59,15 @@ export const assets: Asset[] = [
   },
 
   // ✨ LOGOS & BRANDING
-  {
-    id: 5,
-    title: "Tech Startup Logo Pack",
-    description: "Modern logo designs perfect for tech startups and digital companies.",
-    category: "logos-and-branding",
-    type: "AI",
-    fileSize: "12.5 MB",
-    dimensions: "Vector",
-    tags: ["logo", "tech", "startup", "modern", "branding"],
-    featured: true,
-    premium: false,
-    downloadCount: "2.2k",
-    previewImage: "/assets/previews/tech-logos-preview.jpg",
-    downloadUrl: "/assets/logos/tech-startup-logos.zip",
-    createdDate: "2025-01-05"
-  },
 
   // 🚗 YOUR CAR LOGO COLLECTION
   {
-    id: 6,
-    title: "Car Logo Collection",
-    description: "Premium collection of car logos and automotive branding designs. Perfect for car dealerships, automotive companies, and vehicle-related businesses.",
+    id: 5,
+    title: "Car Logo",
+    description: "Premium car logo design.",
     category: "logos-and-branding",
     type: "ZIP",
-    fileSize: "5.2 MB",
+    fileSize: "197 KB",
     dimensions: "Vector",
     tags: ["car", "logo", "automotive", "vehicle", "branding", "transport"],
     featured: false,
@@ -129,14 +81,14 @@ export const assets: Asset[] = [
   // 🎨 YOUR BACKGROUND COLLECTION
   {
     id: 7,
-    title: "Background Collection v1",
-    description: "Beautiful collection of background illustrations perfect for web designs, presentations, and creative projects. High-quality designs with modern aesthetics.",
+    title: "Background v1",
+    description: "High-quality design with modern aesthetics.",
     category: "illustrations",
     type: "ZIP",
-    fileSize: "3.8 MB",
+    fileSize: "555 KB",
     dimensions: "Vector",
     tags: ["background", "illustration", "design", "web", "modern", "creative"],
-    featured: true,
+    featured: false,
     premium: false,
     downloadCount: "0",
     previewImage: "/assets/previews/Background.v1.png",

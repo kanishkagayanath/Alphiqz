@@ -124,11 +124,11 @@ export default function Home() {
                 description: 'Vector illustrations & artwork'
               },
               { 
-                name: 'Icons & UI', 
-                count: '300+', 
+                name: 'Gaming Assets', 
+                count: '200+', 
                 color: 'from-blue-400 to-cyan-500',
-                icon: '🔷',
-                description: 'Interface elements & icons'
+                icon: '🎮',
+                description: 'Game graphics & UI elements'
               },
               { 
                 name: 'Patterns', 

@@ -7,8 +7,8 @@ import { assets, getAssetsByCategory, searchAssets } from '@/data/assets';
 
 const categories = [
   { id: 'all', name: 'All Categories', icon: '🎯' },
-  { id: 'illustrations', name: 'Illustrations', icon: '�' },
-  { id: 'icons-and-ui', name: 'Icons & UI', icon: '🔷' },
+  { id: 'illustrations', name: 'Illustrations', icon: '🎨' },
+  { id: 'gaming-assets', name: 'Gaming Assets', icon: '🎮' },
   { id: 'patterns', name: 'Patterns', icon: '🌟' },
   { id: 'logos-and-branding', name: 'Logos & Branding', icon: '✨' },
 ];
@@ -141,7 +141,7 @@ export default function Designs() {
                 {/* Fallback icon (hidden by default, shown if image fails) */}
                 <div className="text-6xl group-hover:scale-110 transition-transform duration-300 absolute inset-0 flex items-center justify-center" style={{display: 'none'}}>
                   {asset.category === 'illustrations' && '🎨'}
-                  {asset.category === 'icons-and-ui' && '🔷'}
+                  {asset.category === 'gaming-assets' && '🎮'}
                   {asset.category === 'patterns' && '🌟'}
                   {asset.category === 'logos-and-branding' && '✨'}
                 </div>
