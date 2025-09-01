@@ -26,17 +26,85 @@ export const assets: Asset[] = [
   {
     id: 3,
     title: "Game UI Elements Pack",
-    description: "Complete set of game UI elements including buttons, health bars, menus, and icons perfect for game development.",
+    description: "Complete set of crow fly 2d asset set. Perfect for 2D game development.",
     category: "gaming-assets",
-    type: "SVG",
-    fileSize: "3.2 MB",
+    type: "ZIP",
+    fileSize: "490 KB",
     dimensions: "Various",
-    tags: ["gaming", "ui", "game", "buttons", "interface", "mobile"],
-    featured: true,
+    tags: ["Crow", "2D", "Crowfly"],
+    featured: false,
     premium: false,
-    downloadCount: "3.4k",
-    previewImage: "/assets/previews/game-ui-elements-preview.jpg",
-    downloadUrl: "/assets/gaming/game-ui-elements-pack.zip",
+    downloadCount: "0",
+    previewImage: "/assets/previews/Crowfly.png",
+    downloadUrl: "/assets/gaming/Crow_Fly.zip",
+    createdDate: "2025-01-12"
+  },
+
+   {
+    id: 7,
+    title: "Finish Arrow Board",
+     description: "Complete finishing arrow board. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "239 KB",
+    dimensions: "Various",
+    tags: ["finisharrow", "2D", "2Dgame"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Finisharrow.png",
+    downloadUrl: "/assets/gaming/FinishBoard.zip",
+    createdDate: "2025-01-12"
+  },
+
+  {
+    id: 8,
+    title: "Spike Traps",
+    description: "Complete spike traps set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "364 KB",
+    dimensions: "Various",
+    tags: ["Spikes", "2D", "Traps"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Spikes.png",
+    downloadUrl: "/assets/gaming/Traps.zip",
+    createdDate: "2025-01-12"
+  },
+
+  {
+    id: 9,
+    title: "Male Bug Fly",
+    description: "Complete male bug fly set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "364 KB",
+    dimensions: "Various",
+    tags: ["Male Bug", "2D", "Fly"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Bug(M).png",
+    downloadUrl: "/assets/gaming/Bug(M).zip",
+    createdDate: "2025-01-12"
+  },
+
+  {
+    id: 10,
+    title: "Female Bug Fly",
+    description: "Complete female bug fly set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Female Bug", "2D", "Fly"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Bug(F).png",
+    downloadUrl: "/assets/gaming/Bug(F).zip",
     createdDate: "2025-01-12"
   },
 
@@ -80,7 +148,7 @@ export const assets: Asset[] = [
 
   // 🎨 YOUR BACKGROUND COLLECTION
   {
-    id: 7,
+    id: 6,
     title: "Background v1",
     description: "High-quality design with modern aesthetics.",
     category: "illustrations",
