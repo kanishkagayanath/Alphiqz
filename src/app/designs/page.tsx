@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { assets, getAssetsByCategory, searchAssets } from '@/data/assets';
@@ -13,7 +13,7 @@ const categories = [
   { id: 'logos-and-branding', name: 'Logos & Branding', icon: '✨' },
 ];
 
-export default function Designs() {
+function DesignsContent() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
   const [filteredAssets, setFilteredAssets] = useState(assets);
@@ -244,5 +244,48 @@ export default function Designs() {
         )}
       </div>
     </main>
+  );
+}
+
+// Loading component for Suspense fallback
+function DesignsLoading() {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <div className="h-16 bg-gray-200 rounded-lg mb-6 animate-pulse"></div>
+          <div className="h-6 bg-gray-200 rounded-lg mb-8 max-w-3xl mx-auto animate-pulse"></div>
+          <div className="h-12 bg-gray-200 rounded-xl mb-8 max-w-md mx-auto animate-pulse"></div>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="h-12 w-32 bg-gray-200 rounded-xl animate-pulse"></div>
+          ))}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            <div key={i} className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              <div className="h-48 bg-gray-200 animate-pulse"></div>
+              <div className="p-6">
+                <div className="h-6 bg-gray-200 rounded mb-2 animate-pulse"></div>
+                <div className="h-4 bg-gray-200 rounded mb-3 animate-pulse"></div>
+                <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
+
+// Main component with Suspense wrapper
+export default function Designs() {
+  return (
+    <Suspense fallback={<DesignsLoading />}>
+      <DesignsContent />
+    </Suspense>
   );
 }
