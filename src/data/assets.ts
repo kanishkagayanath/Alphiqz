@@ -216,69 +216,69 @@ export const assets: Asset[] = [
   {
     id: 4,
     title: "Vector Pattern 1",
-    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    description: "Geometric pattern perfect for backgrounds and textures.",
     category: "patterns",
     type: "Zip",
-    fileSize: "8.1 MB",
+    fileSize: "253 KB",
     dimensions: "Various",
-    tags: ["patterns", "geometric", "background", "texture"],
+    tags: ["patterns", "background", "texture"],
     featured: false,
     premium: false,
     downloadCount: "0",
     previewImage: "/assets/previews/Pattern_1.png",
     downloadUrl: "/assets/patterns/Pattern_1.zip",
-    createdDate: "2025-01-08"
+    createdDate: "2025-09-14"
   },
 
   {
     id: 17,
     title: "Vector Pattern 2",
-    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    description: "Geometric pattern perfect for backgrounds and textures.",
     category: "patterns",
     type: "png",
-    fileSize: "8.1 MB",
+    fileSize: "1.87 MB",
     dimensions: "Various",
-    tags: ["patterns", "geometric", "background", "texture"],
+    tags: ["patterns", "background", "texture"],
     featured: false,
     premium: false,
     downloadCount: "0",
     previewImage: "/assets/previews/Pattern_2.png",
     downloadUrl: "/assets/patterns/Pattern_2.png",
-    createdDate: "2025-01-08"
+    createdDate: "2025-09-14"
   },
 
   {
     id: 18,
     title: "Vector Pattern 3",
-    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    description: "Geometric pattern perfect for backgrounds and textures.",
     category: "patterns",
     type: "png",
-    fileSize: "8.1 MB",
+    fileSize: "1.99 MB",
     dimensions: "Various",
-    tags: ["patterns", "geometric", "background", "texture"],
+    tags: ["patterns", "background", "texture"],
     featured: false,
     premium: false,
     downloadCount: "0",
     previewImage: "/assets/previews/Pattern_3.png",
     downloadUrl: "/assets/patterns/Pattern_3.png",
-    createdDate: "2025-01-08"
+    createdDate: "2025-09-14"
   },
 
   {
     id: 18,
     title: "Vector Pattern 4",
-    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    description: "Geometric pattern perfect for backgrounds and textures.",
     category: "patterns",
     type: "png",
-    fileSize: "8.1 MB",
+    fileSize: "2.1 MB",
     dimensions: "Various",
-    tags: ["patterns", "geometric", "background", "texture"],
+    tags: ["patterns", "background", "texture"],
     featured: false,
     premium: false,
     downloadCount: "0",
     previewImage: "/assets/previews/Pattern_4.png",
     downloadUrl: "/assets/patterns/Pattern_4.png",
-    createdDate: "2025-01-08"
+    createdDate: "2025-09-14"
   },
 
   // ✨ LOGOS & BRANDING
