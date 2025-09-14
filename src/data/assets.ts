@@ -108,21 +108,176 @@ export const assets: Asset[] = [
     createdDate: "2025-01-12"
   },
 
+  {
+    id: 11,
+    title: "Axe",
+    description: "Complete axe set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Axe", "2D", "Weapon"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Axe.png",
+    downloadUrl: "/assets/gaming/Axe.zip",
+    createdDate: "2025-01-12"
+  },
+
+  {
+    id: 12,
+    title: "Dagger",
+    description: "Complete dagger set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Dagger", "2D", "Weapon"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Dagger.png",
+    downloadUrl: "/assets/gaming/Dagger.zip",
+    createdDate: "2025-01-12"
+  },
+
+  {
+    id: 13,
+    title: "Magic-Stick",
+    description: "Complete magic stick set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Magic Stick", "2D", "Weapon"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Magic-Stick.png",
+    downloadUrl: "/assets/gaming/Magic-Stick.zip",
+    createdDate: "2025-01-12"
+  },
+
+   {
+    id: 14,
+    title: "Spear",
+    description: "Complete spear set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Spear", "2D", "Weapon"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Spear.png",
+    downloadUrl: "/assets/gaming/Spear.zip",
+    createdDate: "2025-01-12"
+  },
+
+   {
+    id: 15,
+    title: "Sword",
+    description: "Complete sword set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Sword", "2D", "Weapon"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Sword.png",
+    downloadUrl: "/assets/gaming/Sword.zip",
+    createdDate: "2025-01-12"
+  },
+
+   {
+    id: 16,
+    title: "Warrior-Male",
+    description: "Complete warrior male set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "599 KB",
+    dimensions: "Various",
+    tags: ["Warrior", "2D", "Character"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Warrior-Male.png",
+    downloadUrl: "/assets/gaming/Warrior_Male.zip",
+    createdDate: "2025-01-12"
+  },
+
+  
+
   // 🌟 PATTERNS
   {
     id: 4,
-    title: "Seamless Geometric Patterns",
+    title: "Vector Pattern 1",
     description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
     category: "patterns",
-    type: "PNG",
+    type: "Zip",
     fileSize: "8.1 MB",
-    dimensions: "2048x2048",
-    tags: ["patterns", "geometric", "seamless", "background", "texture"],
+    dimensions: "Various",
+    tags: ["patterns", "geometric", "background", "texture"],
     featured: false,
     premium: false,
-    downloadCount: "1.3k",
-    previewImage: "/assets/previews/geometric-patterns-preview.jpg",
-    downloadUrl: "/assets/patterns/geometric-patterns-pack.zip",
+    downloadCount: "0",
+    previewImage: "/assets/previews/Pattern_1.png",
+    downloadUrl: "/assets/patterns/Pattern_1.zip",
+    createdDate: "2025-01-08"
+  },
+
+  {
+    id: 17,
+    title: "Vector Pattern 2",
+    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    category: "patterns",
+    type: "png",
+    fileSize: "8.1 MB",
+    dimensions: "Various",
+    tags: ["patterns", "geometric", "background", "texture"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Pattern_2.png",
+    downloadUrl: "/assets/patterns/Pattern_2.png",
+    createdDate: "2025-01-08"
+  },
+
+  {
+    id: 18,
+    title: "Vector Pattern 3",
+    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    category: "patterns",
+    type: "png",
+    fileSize: "8.1 MB",
+    dimensions: "Various",
+    tags: ["patterns", "geometric", "background", "texture"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Pattern_3.png",
+    downloadUrl: "/assets/patterns/Pattern_3.png",
+    createdDate: "2025-01-08"
+  },
+
+  {
+    id: 18,
+    title: "Vector Pattern 4",
+    description: "Collection of seamless geometric patterns perfect for backgrounds and textures.",
+    category: "patterns",
+    type: "png",
+    fileSize: "8.1 MB",
+    dimensions: "Various",
+    tags: ["patterns", "geometric", "background", "texture"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Pattern_4.png",
+    downloadUrl: "/assets/patterns/Pattern_4.png",
     createdDate: "2025-01-08"
   },
 
@@ -149,7 +304,7 @@ export const assets: Asset[] = [
   // 🎨 YOUR BACKGROUND COLLECTION
   {
     id: 6,
-    title: "Background v1",
+    title: "Background Version_1",
     description: "High-quality design with modern aesthetics.",
     category: "illustrations",
     type: "ZIP",
