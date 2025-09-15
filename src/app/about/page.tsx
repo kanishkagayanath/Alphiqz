@@ -10,29 +10,65 @@ export default function About() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            We're passionate about creating beautiful, high-quality design assets for creators worldwide.
+            Hi! I'm an individual designer passionate about helping creators and gamers develop their gaming worlds in the most vibrant and creative way possible.
           </p>
         </div>
         
         {/* Mission section */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-6 bg-white rounded-xl shadow-md">
-            <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-            <p className="text-gray-600">To democratize design by providing free, high-quality assets for everyone.</p>
+            <div className="text-4xl mb-4">�</div>
+            <h3 className="text-xl font-semibold mb-2">My Mission</h3>
+            <p className="text-gray-600">To empower game creators and developers with stunning visual assets that bring their gaming worlds to life in the most vibrant way.</p>
           </div>
           
           <div className="text-center p-6 bg-white rounded-xl shadow-md">
-            <div className="text-4xl mb-4">💡</div>
-            <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
-            <p className="text-gray-600">A world where creativity knows no bounds and great design is accessible to all.</p>
+            <div className="text-4xl mb-4">🌟</div>
+            <h3 className="text-xl font-semibold mb-2">My Vision</h3>
+            <p className="text-gray-600">A gaming universe where every creator has access to brilliant design assets to build immersive and captivating gaming experiences.</p>
           </div>
           
           <div className="text-center p-6 bg-white rounded-xl shadow-md">
-            <div className="text-4xl mb-4">❤️</div>
-            <h3 className="text-xl font-semibold mb-2">Our Values</h3>
-            <p className="text-gray-600">Quality, creativity, community, and the belief that design can change the world.</p>
+            <div className="text-4xl mb-4">🚀</div>
+            <h3 className="text-xl font-semibold mb-2">My Values</h3>
+            <p className="text-gray-600">Creativity, gaming passion, community support, and the belief that amazing visuals can transform any gaming world into something extraordinary.</p>
           </div>
+        </div>
+
+        {/* Personal Story Section */}
+        <div className="mt-20 bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 md:p-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              My Story
+            </h2>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              As a passionate gamer and designer, I understand the struggles of finding the perfect visual assets to bring gaming ideas to life. 
+              That's why I created Alphiq - to bridge the gap between creative vision and accessible design resources.
+            </p>
+            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              Every asset I create is crafted with love for the gaming community. Whether you're an indie developer building your first game, 
+              a content creator designing gaming thumbnails, or a gamer looking to customize your setup - I'm here to help make your gaming world shine brighter.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="bg-white px-4 py-2 rounded-full text-purple-600 font-medium shadow-sm">🎨 Game UI Design</span>
+              <span className="bg-white px-4 py-2 rounded-full text-purple-600 font-medium shadow-sm">🎮 Gaming Assets</span>
+              <span className="bg-white px-4 py-2 rounded-full text-purple-600 font-medium shadow-sm">🌟 Creative Illustrations</span>
+              <span className="bg-white px-4 py-2 rounded-full text-purple-600 font-medium shadow-sm">🚀 Free Downloads</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Level Up Your Gaming World?</h3>
+          <p className="text-gray-600 mb-8">Explore my collection of gaming assets and bring your creative vision to life!</p>
+          <a 
+            href="/designs"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <span>🎮</span>
+            <span>Browse Gaming Assets</span>
+          </a>
         </div>
       </div>
     </main>
