@@ -1,4 +1,4 @@
-# Alphiq Design Assets
+# Alphiqz Design Assets
 
 A modern, stylish website for showcasing and distributing free design assets, illustrations, and digital resources.
 

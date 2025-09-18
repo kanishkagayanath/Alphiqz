@@ -69,7 +69,7 @@ export default function Contact() {
           <div className="text-center">
             <div className="text-3xl mb-2">📧</div>
             <h3 className="font-semibold mb-1">Email</h3>
-            <p className="text-gray-600">hello@alphiq.design</p>
+            <p className="text-gray-600">hello@alphiqz.design</p>
           </div>
           
           <div className="text-center">

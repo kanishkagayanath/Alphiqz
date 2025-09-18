@@ -6,7 +6,7 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             About
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-              Alphiq Design
+              Alphiqz Design
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -43,7 +43,7 @@ export default function About() {
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               As a passionate gamer and designer, I understand the struggles of finding the perfect visual assets to bring gaming ideas to life. 
-              That's why I created Alphiq - to bridge the gap between creative vision and accessible design resources.
+              That's why I created Alphiqz - to bridge the gap between creative vision and accessible design resources.
             </p>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Every asset I create is crafted with love for the gaming community. Whether you're an indie developer building your first game, 

@@ -35,7 +35,7 @@ export default function Home() {
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 Welcome to
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600">
-                  Alphiq
+                  Alphiqz
                 </span>
               </h1>
               
@@ -178,7 +178,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Alphiq?
+              Why Choose Alphiqz?
             </h2>
             <p className="text-xl text-gray-600">
               We're committed to providing the best design assets for creators worldwide

@@ -38,9 +38,9 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-center items-center h-16 relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="absolute left-0 flex items-center space-x-2 group">
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg">
                 <span className="text-white font-bold text-lg">A</span>
@@ -48,11 +48,11 @@ const Navbar = () => {
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse shadow-sm"></div>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Alphiq
+              Alphiqz
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <Link
@@ -97,19 +97,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/designs" className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group inline-block">
-              <span className="relative z-10">Get Started</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-20 animate-pulse"></div>
-            </Link>
-          </div>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center space-y-1.5 group"
+            className="md:hidden absolute right-0 w-8 h-8 flex flex-col justify-center items-center space-y-1.5 group"
           >
             <div className={`w-6 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
             <div className={`w-6 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>

@@ -9,7 +9,7 @@
 ### Step 1: Place Your ZIP File
 Move your car logo ZIP file to:
 ```
-C:\Users\Kanishka\Documents\Alphiq\public\assets\logos\CarLogo.zip
+C:\Users\Kanishka\Documents\Alphiqz\public\assets\logos\CarLogo.zip
 ```
 
 ### Step 2: Verify File Names Match

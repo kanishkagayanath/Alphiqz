@@ -6,12 +6,12 @@ import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Alphiq Design Assets - Free Illustrator Designs & Digital Assets',
+  title: 'Alphiqz Design Assets - Free Illustrator Designs & Digital Assets',
   description: 'Download high-quality, free design assets, illustrations, and digital resources for your creative projects. Modern, stylish designs for designers and creators.',
   keywords: 'free design assets, illustrations, digital downloads, vector graphics, design resources',
-  authors: [{ name: 'Alphiq Design' }],
+  authors: [{ name: 'Alphiqz Design' }],
   openGraph: {
-    title: 'Alphiq Design Assets',
+    title: 'Alphiqz Design Assets',
     description: 'Free high-quality design assets and illustrations',
     type: 'website',
     locale: 'en_US',

@@ -336,8 +336,8 @@ export const assets: Asset[] = [
     featured: true, // true for featured items
     premium: false, // true for premium items
     downloadCount: "0", // Download count
-    previewImage: "C:\\Users\\Kanishka\\Documents\\Alphiq\\public\\assets\\previews\\CarLogo.png", // Preview image path
-    downloadUrl: "C:\\Users\\Kanishka\\Documents\\Alphiq\\public\\assets\\illustrations\\CarLogo", // Download file path
+    previewImage: "C:\\Users\\Kanishka\\Documents\\Alphiqz\\public\\assets\\previews\\CarLogo.png", // Preview image path
+    downloadUrl: "C:\\Users\\Kanishka\\Documents\\Alphiqz\\public\\assets\\illustrations\\CarLogo", // Download file path
     createdDate: "2025-01-20" // Creation date
   },
   */

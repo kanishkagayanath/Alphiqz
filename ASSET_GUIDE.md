@@ -1,4 +1,4 @@
-# 🎨 How to Add Your Assets to Alphiq
+# 🎨 How to Add Your Assets to Alphiqz
 
 ## 📁 Folder Structure
 ```
