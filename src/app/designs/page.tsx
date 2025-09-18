@@ -58,17 +58,17 @@ function DesignsContent() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 pt-20">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Design
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400 drop-shadow-lg">
               Collection
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Explore our curated collection of premium design assets, ready to download and use in your creative projects.
           </p>
           
@@ -80,7 +80,7 @@ function DesignsContent() {
                 placeholder="Search designs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm"
+                className="w-full px-4 py-3 pl-12 pr-4 text-white bg-slate-800/60 backdrop-blur-sm border border-cyan-400/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 shadow-sm placeholder-gray-400"
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-4">
                 <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,8 +99,8 @@ function DesignsContent() {
               onClick={() => handleCategoryChange(category.id)}
               className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                 activeCategory === category.id
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg transform scale-105'
-                  : 'bg-white text-gray-700 hover:bg-purple-50 hover:text-purple-600 shadow-sm'
+                  ? 'bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white shadow-lg shadow-cyan-400/25 transform scale-105 border border-cyan-400/30'
+                  : 'bg-slate-800/60 backdrop-blur-sm text-gray-300 hover:bg-slate-700/60 hover:text-cyan-300 shadow-sm border border-slate-600/40'
               }`}
             >
               <span className="text-lg">{category.icon}</span>
@@ -111,10 +111,10 @@ function DesignsContent() {
 
         {/* Results Count */}
         <div className="text-center mb-8">
-          <p className="text-gray-600">
-            Showing <span className="font-semibold text-purple-600">{filteredAssets.length}</span> design{filteredAssets.length !== 1 ? 's' : ''}
+          <p className="text-gray-300">
+            Showing <span className="font-semibold text-cyan-400">{filteredAssets.length}</span> design{filteredAssets.length !== 1 ? 's' : ''}
             {activeCategory !== 'all' && (
-              <span> in <span className="font-semibold">{categories.find(c => c.id === activeCategory)?.name}</span></span>
+              <span> in <span className="font-semibold text-teal-400">{categories.find(c => c.id === activeCategory)?.name}</span></span>
             )}
           </p>
         </div>
@@ -122,9 +122,9 @@ function DesignsContent() {
         {/* Design Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredAssets.map((asset) => (
-            <div key={asset.id} className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+            <div key={asset.id} className="group relative bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 hover:shadow-cyan-400/20 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-slate-600/40 hover:border-cyan-400/30">
               {/* Image/Preview */}
-              <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-600 flex items-center justify-center relative overflow-hidden">
                 {/* Show actual preview image if available */}
                 <img 
                   src={asset.previewImage} 
@@ -158,22 +158,22 @@ function DesignsContent() {
               
               {/* Content */}
               <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                <h3 className="font-bold text-lg text-white mb-2 group-hover:text-cyan-400 transition-colors">
                   {asset.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                <p className="text-sm text-gray-300 mb-3 line-clamp-2">
                   {asset.description}
                 </p>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm text-purple-600 bg-purple-50 px-3 py-1 rounded-full font-medium">
+                    <span className="text-sm text-cyan-300 bg-cyan-500/20 px-3 py-1 rounded-full font-medium border border-cyan-400/30">
                       {asset.type}
                     </span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-gray-400">
                       {asset.fileSize}
                     </span>
                   </div>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-400">
                     📥 {asset.downloadCount}
                   </span>
                 </div>
@@ -181,7 +181,7 @@ function DesignsContent() {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1 mb-4">
                   {asset.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                    <span key={tag} className="text-xs text-gray-400 bg-slate-700/60 px-2 py-1 rounded border border-slate-600/40">
                       {tag}
                     </span>
                   ))}
@@ -194,7 +194,7 @@ function DesignsContent() {
                     download={asset.title.replace(/\s+/g, '-').toLowerCase() + '.' + asset.type.toLowerCase()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center"
+                    className="flex-1 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105 text-center border border-cyan-400/30"
                     onClick={(e) => {
                       // Track download count here if needed
                       console.log(`Downloading: ${asset.title}`);
@@ -203,7 +203,7 @@ function DesignsContent() {
                     Download Free
                   </a>
                   <button 
-                    className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors"
+                    className="px-3 py-2 bg-slate-700/60 text-gray-300 rounded-lg hover:bg-slate-600/60 hover:text-cyan-300 transition-colors border border-slate-600/40"
                     onClick={() => window.open(asset.previewImage, '_blank')}
                     title="Preview"
                   >
@@ -219,14 +219,14 @@ function DesignsContent() {
         {filteredAssets.length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">No designs found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
+            <h3 className="text-2xl font-bold text-white mb-2">No designs found</h3>
+            <p className="text-gray-300 mb-6">Try adjusting your search or filter criteria</p>
             <button
               onClick={() => {
                 setActiveCategory('all');
                 setSearchTerm('');
               }}
-              className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
+              className="bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105 border border-cyan-400/30"
             >
               Clear Filters
             </button>
@@ -236,7 +236,7 @@ function DesignsContent() {
         {/* Load More Button */}
         {filteredAssets.length > 0 && (
           <div className="text-center mt-12">
-            <button className="bg-white text-purple-600 border-2 border-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+            <button className="bg-slate-800/60 backdrop-blur-sm text-cyan-400 border-2 border-cyan-400/30 px-8 py-3 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500 hover:via-teal-500 hover:to-blue-600 hover:text-white hover:border-cyan-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/25">
               Load More Designs
             </button>
           </div>
@@ -249,28 +249,28 @@ function DesignsContent() {
 // Loading component for Suspense fallback
 function DesignsLoading() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 pt-20">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <div className="h-16 bg-gray-200 rounded-lg mb-6 animate-pulse"></div>
-          <div className="h-6 bg-gray-200 rounded-lg mb-8 max-w-3xl mx-auto animate-pulse"></div>
-          <div className="h-12 bg-gray-200 rounded-xl mb-8 max-w-md mx-auto animate-pulse"></div>
+          <div className="h-16 bg-slate-700/60 rounded-lg mb-6 animate-pulse"></div>
+          <div className="h-6 bg-slate-700/60 rounded-lg mb-8 max-w-3xl mx-auto animate-pulse"></div>
+          <div className="h-12 bg-slate-700/60 rounded-xl mb-8 max-w-md mx-auto animate-pulse"></div>
         </div>
         
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-12 w-32 bg-gray-200 rounded-xl animate-pulse"></div>
+            <div key={i} className="h-12 w-32 bg-slate-700/60 rounded-xl animate-pulse"></div>
           ))}
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <div key={i} className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="h-48 bg-gray-200 animate-pulse"></div>
+            <div key={i} className="bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 overflow-hidden border border-slate-600/40">
+              <div className="h-48 bg-slate-700/60 animate-pulse"></div>
               <div className="p-6">
-                <div className="h-6 bg-gray-200 rounded mb-2 animate-pulse"></div>
-                <div className="h-4 bg-gray-200 rounded mb-3 animate-pulse"></div>
-                <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+                <div className="h-6 bg-slate-700/60 rounded mb-2 animate-pulse"></div>
+                <div className="h-4 bg-slate-700/60 rounded mb-3 animate-pulse"></div>
+                <div className="h-10 bg-slate-700/60 rounded animate-pulse"></div>
               </div>
             </div>
           ))}
