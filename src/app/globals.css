@@ -3,21 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --primary: #06b6d4;
+  --secondary: #14b8a6;
+  --accent: #f97316;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @layer utilities {
@@ -28,20 +24,22 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1e293b;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: linear-gradient(45deg, #06b6d4, #14b8a6);
+  border-radius: 6px;
+  border: 2px solid #1e293b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
+  background: linear-gradient(45deg, #0891b2, #0d9488);
 }
 
 /* Custom animations for navbar */
@@ -75,6 +73,26 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.6); }
+}
+
+@keyframes neon-glow {
+  0%, 100% { 
+    text-shadow: 
+      0 0 5px rgba(6, 182, 212, 0.5),
+      0 0 10px rgba(6, 182, 212, 0.5),
+      0 0 15px rgba(6, 182, 212, 0.5);
+  }
+  50% { 
+    text-shadow: 
+      0 0 10px rgba(6, 182, 212, 0.8),
+      0 0 20px rgba(6, 182, 212, 0.8),
+      0 0 30px rgba(6, 182, 212, 0.8);
+  }
+}
+
 .animate-float-1 {
   animation: float-1 6s ease-in-out infinite;
 }
@@ -97,4 +115,27 @@ body {
 
 .animate-slide-up {
   animation: slide-up 1s ease-out 0.3s both;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-neon-glow {
+  animation: neon-glow 3s ease-in-out infinite;
+}
+
+/* Custom gradient backgrounds */
+.bg-cyber-grid {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
 }

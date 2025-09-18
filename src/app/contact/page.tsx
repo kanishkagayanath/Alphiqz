@@ -1,22 +1,22 @@
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 pt-20">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Get In
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400 drop-shadow-lg">
               Touch
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Have questions? Want to collaborate? We'd love to hear from you!
           </p>
         </div>
         
         {/* Contact form */}
         <div className="max-w-2xl mx-auto mt-16">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 border border-cyan-400/20 p-8">
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
