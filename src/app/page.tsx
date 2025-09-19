@@ -118,28 +118,28 @@ export default function Home() {
             {[
               { 
                 name: 'Illustrations', 
-                count: '500+', 
+                count: '50+', 
                 color: 'from-cyan-500 via-teal-500 to-blue-600',
                 icon: '🎨',
                 description: 'Vector illustrations & artwork'
               },
               { 
                 name: 'Gaming Assets', 
-                count: '200+', 
+                count: '20+', 
                 color: 'from-orange-500 via-pink-500 to-red-600',
                 icon: '🎮',
                 description: 'Game graphics & UI elements'
               },
               { 
                 name: 'Patterns', 
-                count: '150+', 
+                count: '20+', 
                 color: 'from-emerald-500 via-teal-500 to-cyan-600',
                 icon: '🌟',
                 description: 'Seamless patterns & textures'
               },
               { 
                 name: 'Logos & Branding', 
-                count: '100+', 
+                count: '10+', 
                 color: 'from-purple-500 via-blue-500 to-indigo-600',
                 icon: '✨',
                 description: 'Brand identity elements'

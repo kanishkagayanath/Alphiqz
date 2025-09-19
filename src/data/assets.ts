@@ -319,6 +319,92 @@ export const assets: Asset[] = [
     createdDate: "2025-08-31"
   },
 
+   {
+    id: 20,
+    title: "Morning Background",
+    description: "High-quality design morning environment.(1536x1024)",
+    category: "illustrations",
+    type: "PNG",
+    fileSize: "1.90 MB",
+    dimensions: "1536x1024",
+    tags: ["background", "morning", "design", "modern", "creative"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Morning-View.png",
+    downloadUrl: "/assets/illustrations/Morning-View.png",
+    createdDate: "2025-09-20"
+  },
+
+  {
+    id: 21,
+    title: "Evening Background",
+    description: "High-quality design evening environment.(1536x1024)",
+    category: "illustrations",
+    type: "PNG",
+    fileSize: "2.01 MB",
+    dimensions: "1536x1024",
+    tags: ["background", "evening", "design", "web", "modern", "creative"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Evening-View.png",
+    downloadUrl: "/assets/illustrations/Evening-View.png",
+    createdDate: "2025-09-20"
+  },
+
+  {
+    id: 22,
+    title: "Night Background",
+    description: "High-quality design night environment.(1536x1024)",
+    category: "illustrations",
+    type: "PNG",
+    fileSize: "2.01 MB",
+    dimensions: "1536x1024",
+    tags: ["background", "night", "design", "web", "modern", "creative"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Night-View.png",
+    downloadUrl: "/assets/illustrations/Night-View.png",
+    createdDate: "2025-09-20"
+  },
+
+  {
+    id: 23,
+    title: "Snow Background",
+    description: "High-quality design snow environment.(1536x1024)",
+    category: "illustrations",
+    type: "PNG",
+    fileSize: "2.14 MB",
+    dimensions: "1536x1024",
+    tags: ["background", "snow", "design", "web", "modern", "creative"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Snow-Season-View.png",
+    downloadUrl: "/assets/illustrations/Snow-Season-View.png",
+    createdDate: "2025-09-20"
+  },
+
+  {
+    id: 24,
+    title: "Autumn Background",
+    description: "High-quality design autumn environment.(1536x1024)",
+    category: "illustrations",
+    type: "PNG",
+    fileSize: "2.01 MB",
+    dimensions: "1536x1024",
+    tags: ["background", "autumn", "design", "web", "modern", "creative"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Autumn-Season-View.png",
+    downloadUrl: "/assets/illustrations/Autumn-Season-View.png",
+    createdDate: "2025-09-20"
+  },
+
+
   /* 
   ============================================
   📝 TEMPLATE - Copy this to add new assets:
