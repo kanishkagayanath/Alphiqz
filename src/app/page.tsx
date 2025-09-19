@@ -7,7 +7,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const featuredDesigns = [
-    { id: 1, title: "Abstract Illustrations", type: "Vector Art", preview: "🎨" },
+    { id: 1, title: "Stylish Backgrounds", type: "Vector Art", preview: "🎨" },
     { id: 2, title: "UI/UX Icons", type: "Icon Set", preview: "🔷" },
     { id: 3, title: "Brand Graphics", type: "Logo Design", preview: "✨" },
     { id: 4, title: "Digital Patterns", type: "Backgrounds", preview: "🌟" },
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
-                name: 'Illustrations', 
+                name: 'Stylish Backgrounds', 
                 count: '50+', 
                 color: 'from-cyan-500 via-teal-500 to-blue-600',
                 icon: '🎨',
@@ -189,7 +189,7 @@ export default function Home() {
             {[
               { 
                 title: 'Premium Quality', 
-                desc: 'Professional-grade designs created by expert illustrators and designers',
+                desc: 'Professional-grade designs created by solo illustrator and designer',
                 icon: '💎'
               },
               { 
@@ -220,7 +220,7 @@ export default function Home() {
             Ready to Create Something Amazing?
           </h2>
           <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
-            Discover my handcrafted design assets and illustrations. Start downloading premium designs created with passion and creativity!
+            Discover my handcrafted design assets and Stylish Backgrounds. Start downloading premium designs created with passion and creativity!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

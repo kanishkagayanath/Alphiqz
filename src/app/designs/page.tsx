@@ -6,7 +6,7 @@ import { assets, getAssetsByCategory, searchAssets } from '@/data/assets';
 
 const categories = [
   { id: 'all', name: 'All Categories', icon: '🎯' },
-  { id: 'illustrations', name: 'Illustrations', icon: '🎨' },
+  { id: 'illustrations', name: 'Stylish Backgrounds', icon: '🎨' },
   { id: 'gaming-assets', name: 'Gaming Assets', icon: '🎮' },
   { id: 'patterns', name: 'Patterns', icon: '🌟' },
   { id: 'logos-and-branding', name: 'Logos & Branding', icon: '✨' },

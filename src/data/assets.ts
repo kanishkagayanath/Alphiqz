@@ -19,7 +19,7 @@ export interface Asset {
 }
 
 export const assets: Asset[] = [
-  // 🎨 ILLUSTRATIONS
+  // 🎨 STYLISH BACKGROUNDS
   
 
   // 🎮 GAMING ASSETS
