@@ -1,0 +1,645 @@
+'use client';'use client';
+
+
+
+import { useState, useEffect, Suspense } from 'react';import { useState, useEffect, Suspense } f  return (
+
+import { useSearchParams } from 'next/navigation';    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20 relative">
+
+import { assets, getAssetsByCategory, searchAssets } from '@/data/assets';      {/* Futuristic Background Grid */}
+
+      <div className="fixed inset-0 opacity-10 pointer-events-none">
+
+const categories = [        <div className="absolute inset-0" style={{
+
+  { id: 'all', name: 'All Categories', icon: '🎯' },          backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg fill='%2300f5ff' fill-opacity='0.4'%3e%3cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e")`
+
+  { id: 'illustrations', name: 'Stylish Backgrounds', icon: '🎨' },        }}></div>
+
+  { id: 'gaming-assets', name: 'Gaming Assets', icon: '🎮' },      </div>
+
+  { id: 'patterns', name: 'Patterns', icon: '🌟' },      
+
+  { id: 'logos-and-branding', name: 'Logos & Branding', icon: '✨' },      {/* Floating Particles */}
+
+];      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-cyan-400 rounded-full opacity-60 animate-ping" style={{animationDelay: '0s'}}></div>
+
+function DesignsContent() {        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-teal-400 rounded-full opacity-60 animate-ping" style={{animationDelay: '2s'}}></div>
+
+  const searchParams = useSearchParams();        <div className="absolute bottom-1/3 left-1/3 w-0.5 h-0.5 bg-blue-400 rounded-full opacity-60 animate-ping" style={{animationDelay: '4s'}}></div>
+
+  const [activeCategory, setActiveCategory] = useState('all');        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
+
+  const [filteredAssets, setFilteredAssets] = useState(assets);        <div className="absolute bottom-1/4 right-1/5 w-1 h-1 bg-emerald-400 rounded-full opacity-50 animate-ping" style={{animationDelay: '3s'}}></div>
+
+  const [searchTerm, setSearchTerm] = useState('');      </div>
+
+      
+
+  useEffect(() => {      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+
+    const categoryParam = searchParams.get('category');        {/* Header */}
+
+    if (categoryParam) {        <div className="text-center mb-16">react';
+
+      setActiveCategory(categoryParam);import { useSearchParams } from 'next/navigation';
+
+    }import { assets, getAssetsByCategory, searchAssets } from '@/data/assets';
+
+  }, [searchParams]);
+
+const categories = [
+
+  useEffect(() => {  { id: 'all', name: 'All Categories', icon: '🎯' },
+
+    let filtered = assets;  { id: 'illustrations', name: 'Stylish Backgrounds', icon: '🎨' },
+
+      { id: 'gaming-assets', name: 'Gaming Assets', icon: '🎮' },
+
+    // Filter by category  { id: 'patterns', name: 'Patterns', icon: '🌟' },
+
+    if (activeCategory !== 'all') {  { id: 'logos-and-branding', name: 'Logos & Branding', icon: '✨' },
+
+      filtered = getAssetsByCategory(activeCategory);];
+
+    }
+
+    function DesignsContent() {
+
+    // Filter by search term  const searchParams = useSearchParams();
+
+    if (searchTerm) {  const [activeCategory, setActiveCategory] = useState('all');
+
+      filtered = searchAssets(searchTerm);  const [filteredAssets, setFilteredAssets] = useState(assets);
+
+      // If we also have a category filter, apply it to search results  const [searchTerm, setSearchTerm] = useState('');
+
+      if (activeCategory !== 'all') {
+
+        filtered = filtered.filter(asset => asset.category === activeCategory);  useEffect(() => {
+
+      }    const categoryParam = searchParams.get('category');
+
+    }    if (categoryParam) {
+
+          setActiveCategory(categoryParam);
+
+    setFilteredAssets(filtered);    }
+
+  }, [activeCategory, searchTerm]);  }, [searchParams]);
+
+
+
+  const handleCategoryChange = (categoryId: string) => {  useEffect(() => {
+
+    setActiveCategory(categoryId);    let filtered = assets;
+
+    // Update URL without page reload    
+
+    const url = new URL(window.location.href);    // Filter by category
+
+    if (categoryId === 'all') {    if (activeCategory !== 'all') {
+
+      url.searchParams.delete('category');      filtered = getAssetsByCategory(activeCategory);
+
+    } else {    }
+
+      url.searchParams.set('category', categoryId);    
+
+    }    // Filter by search term
+
+    window.history.pushState({}, '', url);    if (searchTerm) {
+
+  };      filtered = searchAssets(searchTerm);
+
+      // If we also have a category filter, apply it to search results
+
+  return (      if (activeCategory !== 'all') {
+
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20 relative">        filtered = filtered.filter(asset => asset.category === activeCategory);
+
+      {/* Futuristic Background Grid */}      }
+
+      <div className="fixed inset-0 opacity-10 pointer-events-none">    }
+
+        <div className="absolute inset-0" style={{    
+
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg fill='%2300f5ff' fill-opacity='0.4'%3e%3cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e")`    setFilteredAssets(filtered);
+
+        }}></div>  }, [activeCategory, searchTerm]);
+
+      </div>
+
+        const handleCategoryChange = (categoryId: string) => {
+
+      {/* Floating Particles */}    setActiveCategory(categoryId);
+
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">    // Update URL without page reload
+
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-cyan-400 rounded-full opacity-60 animate-ping" style={{animationDelay: '0s'}}></div>    const url = new URL(window.location.href);
+
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-teal-400 rounded-full opacity-60 animate-ping" style={{animationDelay: '2s'}}></div>    if (categoryId === 'all') {
+
+        <div className="absolute bottom-1/3 left-1/3 w-0.5 h-0.5 bg-blue-400 rounded-full opacity-60 animate-ping" style={{animationDelay: '4s'}}></div>      url.searchParams.delete('category');
+
+        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>    } else {
+
+        <div className="absolute bottom-1/4 right-1/5 w-1 h-1 bg-emerald-400 rounded-full opacity-50 animate-ping" style={{animationDelay: '3s'}}></div>      url.searchParams.set('category', categoryId);
+
+      </div>    }
+
+          window.history.pushState({}, '', url);
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">  };
+
+        {/* Enhanced Header */}
+
+        <div className="text-center mb-16">  return (
+
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/10 to-teal-500/20 rounded-full mb-8 border-2 border-cyan-400/30 backdrop-blur-md relative overflow-hidden group hover:scale-105 transition-all duration-500">    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20">
+
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+            <div className="relative z-10 flex items-center">        {/* Header */}
+
+              <span className="text-2xl mr-2 animate-pulse">🎨</span>        <div className="text-center mb-16">
+
+              <span className="text-cyan-300 font-semibold tracking-wider">Design Library</span>          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/10 to-teal-500/20 rounded-full mb-8 border-2 border-cyan-400/30 backdrop-blur-md relative overflow-hidden group hover:scale-105 transition-all duration-500">
+
+              <div className="ml-3 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+
+            </div>            <div className="relative z-10 flex items-center">
+
+          </div>              <span className="text-2xl mr-2 animate-pulse">🎨</span>
+
+                        <span className="text-cyan-300 font-semibold tracking-wider">Design Library</span>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight relative">              <div className="ml-3 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+
+            <span className="block relative">            </div>
+
+              Design          </div>
+
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-xl opacity-30 animate-pulse"></div>          
+
+            </span>          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight relative">
+
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 drop-shadow-2xl relative" style={{            <span className="block relative">
+
+              backgroundSize: '400% 400%',              Design
+
+              animation: 'gradient 3s ease infinite'              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-xl opacity-30 animate-pulse"></div>
+
+            }}>            </span>
+
+              Collection            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 drop-shadow-2xl relative" style={{
+
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-blue-400/20 blur-2xl animate-pulse"></div>              backgroundSize: '400% 400%',
+
+            </span>              animation: 'gradient 3s ease infinite'
+
+          </h1>            }}>
+
+          <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">              Collection
+
+            Explore our curated collection of premium design assets, ready to download and use in your creative projects.              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-blue-400/20 blur-2xl animate-pulse"></div>
+
+          </p>            </span>
+
+                    </h1>
+
+          {/* Enhanced Search Bar */}          <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+
+          <div className="max-w-lg mx-auto mb-12">            Explore our curated collection of premium design assets, ready to download and use in your creative projects.
+
+            <div className="relative group">          </p>
+
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-teal-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>          
+
+              <input          {/* Search Bar */}
+
+                type="text"          <div className="max-w-md mx-auto mb-8">
+
+                placeholder="Search designs..."            <div className="relative">
+
+                value={searchTerm}              <input
+
+                onChange={(e) => setSearchTerm(e.target.value)}                type="text"
+
+                className="relative w-full px-6 py-4 pl-16 pr-6 text-white bg-slate-800/70 backdrop-blur-md border-2 border-cyan-400/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400/60 shadow-2xl placeholder-gray-400 text-lg font-medium hover:border-cyan-400/50 transition-all duration-300"                placeholder="Search designs..."
+
+              />                value={searchTerm}
+
+              <div className="absolute inset-y-0 left-0 flex items-center pl-6">                onChange={(e) => setSearchTerm(e.target.value)}
+
+                <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">                className="w-full px-4 py-3 pl-12 pr-4 text-white bg-slate-800/60 backdrop-blur-sm border border-cyan-400/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 shadow-sm placeholder-gray-400"
+
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />              />
+
+                </svg>              <div className="absolute inset-y-0 left-0 flex items-center pl-4">
+
+              </div>                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+            </div>                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+
+          </div>                </svg>
+
+        </div>              </div>
+
+            </div>
+
+        {/* Enhanced Category Filter */}          </div>
+
+        <div className="flex flex-wrap justify-center gap-6 mb-16">        </div>
+
+          {categories.map((category, index) => (
+
+            <button        {/* Category Filter */}
+
+              key={category.id}        <div className="flex flex-wrap justify-center gap-4 mb-12">
+
+              onClick={() => handleCategoryChange(category.id)}          {categories.map((category) => (
+
+              className={`group relative flex items-center space-x-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-500 overflow-hidden ${            <button
+
+                activeCategory === category.id              key={category.id}
+
+                  ? 'bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white shadow-2xl shadow-cyan-400/40 transform scale-110 border-2 border-cyan-400/50'              onClick={() => handleCategoryChange(category.id)}
+
+                  : 'bg-slate-800/70 backdrop-blur-md text-gray-300 hover:bg-slate-700/70 hover:text-cyan-300 shadow-xl border-2 border-slate-600/40 hover:border-cyan-400/40 hover:scale-105'              className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+
+              }`}                activeCategory === category.id
+
+              style={{animationDelay: `${index * 0.1}s`}}                  ? 'bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white shadow-lg shadow-cyan-400/25 transform scale-105 border border-cyan-400/30'
+
+            >                  : 'bg-slate-800/60 backdrop-blur-sm text-gray-300 hover:bg-slate-700/60 hover:text-cyan-300 shadow-sm border border-slate-600/40'
+
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>              }`}
+
+              <span className="text-xl relative z-10">{category.icon}</span>            >
+
+              <span className="relative z-10">{category.name}</span>              <span className="text-lg">{category.icon}</span>
+
+            </button>              <span>{category.name}</span>
+
+          ))}            </button>
+
+        </div>          ))}
+
+        </div>
+
+        {/* Results Count */}
+
+        <div className="text-center mb-8">        {/* Results Count */}
+
+          <p className="text-gray-300">        <div className="text-center mb-8">
+
+            Showing <span className="font-semibold text-cyan-400">{filteredAssets.length}</span> design{filteredAssets.length !== 1 ? 's' : ''}          <p className="text-gray-300">
+
+            {activeCategory !== 'all' && (            Showing <span className="font-semibold text-cyan-400">{filteredAssets.length}</span> design{filteredAssets.length !== 1 ? 's' : ''}
+
+              <span> in <span className="font-semibold text-teal-400">{categories.find(c => c.id === activeCategory)?.name}</span></span>            {activeCategory !== 'all' && (
+
+            )}              <span> in <span className="font-semibold text-teal-400">{categories.find(c => c.id === activeCategory)?.name}</span></span>
+
+          </p>            )}
+
+        </div>          </p>
+
+        </div>
+
+        {/* Design Grid */}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">        {/* Design Grid */}
+
+          {filteredAssets.map((asset) => (        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+            <div key={asset.id} className="group relative bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 hover:shadow-cyan-400/20 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-slate-600/40 hover:border-cyan-400/30">          {filteredAssets.map((asset) => (
+
+              {/* Image/Preview */}            <div key={asset.id} className="group relative bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 hover:shadow-cyan-400/20 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-slate-600/40 hover:border-cyan-400/30">
+
+              <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-600 flex items-center justify-center relative overflow-hidden">              {/* Image/Preview */}
+
+                <img               <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-600 flex items-center justify-center relative overflow-hidden">
+
+                  src={asset.previewImage}                 {/* Show actual preview image if available */}
+
+                  alt={asset.title}                <img 
+
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"                  src={asset.previewImage} 
+
+                  onError={(e) => {                  alt={asset.title}
+
+                    e.currentTarget.style.display = 'none';                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;                  onError={(e) => {
+
+                    if (fallback) fallback.style.display = 'flex';                    // Fallback to category icon if image fails to load
+
+                  }}                    e.currentTarget.style.display = 'none';
+
+                />                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+
+                <div className="text-6xl group-hover:scale-110 transition-transform duration-300 absolute inset-0 flex items-center justify-center" style={{display: 'none'}}>                    if (fallback) fallback.style.display = 'flex';
+
+                  {asset.category === 'illustrations' && '🎨'}                  }}
+
+                  {asset.category === 'gaming-assets' && '🎮'}                />
+
+                  {asset.category === 'patterns' && '🌟'}                {/* Fallback icon (hidden by default, shown if image fails) */}
+
+                  {asset.category === 'logos-and-branding' && '✨'}                <div className="text-6xl group-hover:scale-110 transition-transform duration-300 absolute inset-0 flex items-center justify-center" style={{display: 'none'}}>
+
+                </div>                  {asset.category === 'illustrations' && '🎨'}
+
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>                  {asset.category === 'gaming-assets' && '🎮'}
+
+                                  {asset.category === 'patterns' && '🌟'}
+
+                {asset.featured && (                  {asset.category === 'logos-and-branding' && '✨'}
+
+                  <div className="absolute top-3 left-3">                </div>
+
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+
+                      ⭐ Featured                
+
+                    </span>                {/* Featured badge overlay */}
+
+                  </div>                {asset.featured && (
+
+                )}                  <div className="absolute top-3 left-3">
+
+              </div>                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">
+
+                                    ⭐ Featured
+
+              {/* Content */}                    </span>
+
+              <div className="p-6">                  </div>
+
+                <h3 className="font-bold text-lg text-white mb-2 group-hover:text-cyan-400 transition-colors">                )}
+
+                  {asset.title}              </div>
+
+                </h3>              
+
+                <p className="text-sm text-gray-300 mb-3 line-clamp-2">              {/* Content */}
+
+                  {asset.description}              <div className="p-6">
+
+                </p>                <h3 className="font-bold text-lg text-white mb-2 group-hover:text-cyan-400 transition-colors">
+
+                <div className="flex items-center justify-between mb-4">                  {asset.title}
+
+                  <div className="flex items-center space-x-2">                </h3>
+
+                    <span className="text-sm text-cyan-300 bg-cyan-500/20 px-3 py-1 rounded-full font-medium border border-cyan-400/30">                <p className="text-sm text-gray-300 mb-3 line-clamp-2">
+
+                      {asset.type}                  {asset.description}
+
+                    </span>                </p>
+
+                    <span className="text-xs text-gray-400">                <div className="flex items-center justify-between mb-4">
+
+                      {asset.fileSize}                  <div className="flex items-center space-x-2">
+
+                    </span>                    <span className="text-sm text-cyan-300 bg-cyan-500/20 px-3 py-1 rounded-full font-medium border border-cyan-400/30">
+
+                  </div>                      {asset.type}
+
+                  <span className="text-sm text-gray-400">                    </span>
+
+                    📥 {asset.downloadCount}                    <span className="text-xs text-gray-400">
+
+                  </span>                      {asset.fileSize}
+
+                </div>                    </span>
+
+                                  </div>
+
+                {/* Tags */}                  <span className="text-sm text-gray-400">
+
+                <div className="flex flex-wrap gap-1 mb-4">                    📥 {asset.downloadCount}
+
+                  {asset.tags.slice(0, 3).map((tag) => (                  </span>
+
+                    <span key={tag} className="text-xs text-gray-400 bg-slate-700/60 px-2 py-1 rounded border border-slate-600/40">                </div>
+
+                      {tag}                
+
+                    </span>                {/* Tags */}
+
+                  ))}                <div className="flex flex-wrap gap-1 mb-4">
+
+                </div>                  {asset.tags.slice(0, 3).map((tag) => (
+
+                                    <span key={tag} className="text-xs text-gray-400 bg-slate-700/60 px-2 py-1 rounded border border-slate-600/40">
+
+                {/* Action Buttons */}                      {tag}
+
+                <div className="flex space-x-2">                    </span>
+
+                  <a                   ))}
+
+                    href={asset.downloadUrl}                </div>
+
+                    download={asset.title.replace(/\s+/g, '-').toLowerCase() + '.' + asset.type.toLowerCase()}                
+
+                    target="_blank"                {/* Action Buttons */}
+
+                    rel="noopener noreferrer"                <div className="flex space-x-2">
+
+                    className="flex-1 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105 text-center border border-cyan-400/30"                  <a 
+
+                    onClick={(e) => {                    href={asset.downloadUrl}
+
+                      console.log(`Downloading: ${asset.title}`);                    download={asset.title.replace(/\s+/g, '-').toLowerCase() + '.' + asset.type.toLowerCase()}
+
+                    }}                    target="_blank"
+
+                  >                    rel="noopener noreferrer"
+
+                    Download Free                    className="flex-1 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105 text-center border border-cyan-400/30"
+
+                  </a>                    onClick={(e) => {
+
+                  <button                       // Track download count here if needed
+
+                    className="px-3 py-2 bg-slate-700/60 text-gray-300 rounded-lg hover:bg-slate-600/60 hover:text-cyan-300 transition-colors border border-slate-600/40"                      console.log(`Downloading: ${asset.title}`);
+
+                    onClick={() => window.open(asset.previewImage, '_blank')}                    }}
+
+                    title="Preview"                  >
+
+                  >                    Download Free
+
+                    👁️                  </a>
+
+                  </button>                  <button 
+
+                </div>                    className="px-3 py-2 bg-slate-700/60 text-gray-300 rounded-lg hover:bg-slate-600/60 hover:text-cyan-300 transition-colors border border-slate-600/40"
+
+              </div>                    onClick={() => window.open(asset.previewImage, '_blank')}
+
+            </div>                    title="Preview"
+
+          ))}                  >
+
+        </div>                    👁️
+
+                  </button>
+
+        {/* Empty State */}                </div>
+
+        {filteredAssets.length === 0 && (              </div>
+
+          <div className="text-center py-16">            </div>
+
+            <div className="text-6xl mb-4">🔍</div>          ))}
+
+            <h3 className="text-2xl font-bold text-white mb-2">No designs found</h3>        </div>
+
+            <p className="text-gray-300 mb-6">Try adjusting your search or filter criteria</p>
+
+            <button        {/* Empty State */}
+
+              onClick={() => {        {filteredAssets.length === 0 && (
+
+                setActiveCategory('all');          <div className="text-center py-16">
+
+                setSearchTerm('');            <div className="text-6xl mb-4">🔍</div>
+
+              }}            <h3 className="text-2xl font-bold text-white mb-2">No designs found</h3>
+
+              className="bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105 border border-cyan-400/30"            <p className="text-gray-300 mb-6">Try adjusting your search or filter criteria</p>
+
+            >            <button
+
+              Clear Filters              onClick={() => {
+
+            </button>                setActiveCategory('all');
+
+          </div>                setSearchTerm('');
+
+        )}              }}
+
+              className="bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105 border border-cyan-400/30"
+
+        {/* Load More Button */}            >
+
+        {filteredAssets.length > 0 && (              Clear Filters
+
+          <div className="text-center mt-12">            </button>
+
+            <button className="bg-slate-800/60 backdrop-blur-sm text-cyan-400 border-2 border-cyan-400/30 px-8 py-3 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500 hover:via-teal-500 hover:to-blue-600 hover:text-white hover:border-cyan-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/25">          </div>
+
+              Load More Designs        )}
+
+            </button>
+
+          </div>        {/* Load More Button */}
+
+        )}        {filteredAssets.length > 0 && (
+
+      </div>          <div className="text-center mt-12">
+
+    </main>            <button className="bg-slate-800/60 backdrop-blur-sm text-cyan-400 border-2 border-cyan-400/30 px-8 py-3 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-cyan-500 hover:via-teal-500 hover:to-blue-600 hover:text-white hover:border-cyan-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/25">
+
+  );              Load More Designs
+
+}            </button>
+
+          </div>
+
+// Loading component for Suspense fallback        )}
+
+function DesignsLoading() {      </div>
+
+  return (    </main>
+
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20">  );
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">}
+
+        <div className="text-center mb-12">
+
+          <div className="h-16 bg-slate-700/60 rounded-lg mb-6 animate-pulse"></div>// Loading component for Suspense fallback
+
+          <div className="h-6 bg-slate-700/60 rounded-lg mb-8 max-w-3xl mx-auto animate-pulse"></div>function DesignsLoading() {
+
+          <div className="h-12 bg-slate-700/60 rounded-xl mb-8 max-w-md mx-auto animate-pulse"></div>  return (
+
+        </div>    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 pt-20">
+
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <div className="flex flex-wrap justify-center gap-4 mb-12">        <div className="text-center mb-12">
+
+          {[1, 2, 3, 4, 5].map((i) => (          <div className="h-16 bg-slate-700/60 rounded-lg mb-6 animate-pulse"></div>
+
+            <div key={i} className="h-12 w-32 bg-slate-700/60 rounded-xl animate-pulse"></div>          <div className="h-6 bg-slate-700/60 rounded-lg mb-8 max-w-3xl mx-auto animate-pulse"></div>
+
+          ))}          <div className="h-12 bg-slate-700/60 rounded-xl mb-8 max-w-md mx-auto animate-pulse"></div>
+
+        </div>        </div>
+
+                
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">        <div className="flex flex-wrap justify-center gap-4 mb-12">
+
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (          {[1, 2, 3, 4, 5].map((i) => (
+
+            <div key={i} className="bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 overflow-hidden border border-slate-600/40">            <div key={i} className="h-12 w-32 bg-slate-700/60 rounded-xl animate-pulse"></div>
+
+              <div className="h-48 bg-slate-700/60 animate-pulse"></div>          ))}
+
+              <div className="p-6">        </div>
+
+                <div className="h-6 bg-slate-700/60 rounded mb-2 animate-pulse"></div>        
+
+                <div className="h-4 bg-slate-700/60 rounded mb-3 animate-pulse"></div>        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <div className="h-10 bg-slate-700/60 rounded animate-pulse"></div>          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+
+              </div>            <div key={i} className="bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-2xl shadow-cyan-400/10 overflow-hidden border border-slate-600/40">
+
+            </div>              <div className="h-48 bg-slate-700/60 animate-pulse"></div>
+
+          ))}              <div className="p-6">
+
+        </div>                <div className="h-6 bg-slate-700/60 rounded mb-2 animate-pulse"></div>
+
+      </div>                <div className="h-4 bg-slate-700/60 rounded mb-3 animate-pulse"></div>
+
+    </main>                <div className="h-10 bg-slate-700/60 rounded animate-pulse"></div>
+
+  );              </div>
+
+}            </div>
+
+          ))}
+
+// Main component with Suspense wrapper        </div>
+
+export default function Designs() {      </div>
+
+  return (    </main>
+
+    <Suspense fallback={<DesignsLoading />}>  );
+
+      <DesignsContent />}
+
+    </Suspense>
+
+  );// Main component with Suspense wrapper
+
+}export default function Designs() {
+  return (
+    <Suspense fallback={<DesignsLoading />}>
+      <DesignsContent />
+    </Suspense>
+  );
+}

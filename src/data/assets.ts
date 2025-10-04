@@ -210,6 +210,59 @@ export const assets: Asset[] = [
     createdDate: "2025-01-12"
   },
 
+  {
+    id: 25,
+    title: "Button-Set",
+    description: "Complete button set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "389 KB",
+    dimensions: "Various",
+    tags: ["Button", "2D", "UI"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Buttons.png",
+    downloadUrl: "/assets/gaming/Buttons.zip",
+    createdDate: "2025-10-02"
+  },
+
+   {
+    id: 26,
+    title: "Tree-Set",
+    description: "Complete tree set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "631 KB",
+    dimensions: "Various",
+    tags: ["Tree", "2D", "UI"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Tree-Set.png",
+    downloadUrl: "/assets/gaming/Tree-Set.zip",
+    createdDate: "2025-10-02"
+  },
+
+  {
+    id: 27,
+    title: "Rocks",
+    description: "Complete rocks set. Perfect for 2D game development.",
+    category: "gaming-assets",
+    type: "ZIP",
+    fileSize: "378 KB",
+    dimensions: "Various",
+    tags: ["Rocks", "2D", "UI"],
+    featured: false,
+    premium: false,
+    downloadCount: "0",
+    previewImage: "/assets/previews/Rocks.png",
+    downloadUrl: "/assets/gaming/Rocks.zip",
+    createdDate: "2025-10-02"
+  },
+
+  
+
   
 
   // 🌟 PATTERNS
