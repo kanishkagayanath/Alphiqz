@@ -118,6 +118,7 @@ export default function Home() {
             {[
               { 
                 name: 'Stylish Backgrounds', 
+                categoryId: 'illustrations',
                 count: '50+', 
                 color: 'from-cyan-500 via-teal-500 to-blue-600',
                 icon: '🎨',
@@ -125,6 +126,7 @@ export default function Home() {
               },
               { 
                 name: 'Gaming Assets', 
+                categoryId: 'gaming-assets',
                 count: '20+', 
                 color: 'from-orange-500 via-pink-500 to-red-600',
                 icon: '🎮',
@@ -132,6 +134,7 @@ export default function Home() {
               },
               { 
                 name: 'Patterns', 
+                categoryId: 'patterns',
                 count: '20+', 
                 color: 'from-emerald-500 via-teal-500 to-cyan-600',
                 icon: '🌟',
@@ -139,13 +142,14 @@ export default function Home() {
               },
               { 
                 name: 'Logos & Branding', 
+                categoryId: 'logos-and-branding',
                 count: '10+', 
                 color: 'from-purple-500 via-blue-500 to-indigo-600',
                 icon: '✨',
                 description: 'Brand identity elements'
               },
             ].map((category, index) => (
-              <Link key={category.name} href={`/designs?category=${encodeURIComponent(category.name.toLowerCase().replace(/\s+/g, '-').replace('&', 'and'))}`} className="group cursor-pointer block" style={{animationDelay: `${index * 0.1}s`}}>
+              <Link key={category.name} href={`/designs?category=${category.categoryId}`} className="group cursor-pointer block" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className={`relative h-64 bg-gradient-to-br ${category.color} rounded-2xl p-6 text-white transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-400/25 overflow-hidden border border-white/20`}>
                   <div className="relative z-10">
                     <div className="text-4xl mb-4 group-hover:animate-bounce">{category.icon}</div>
